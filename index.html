@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Atmanova Global - The sooner The Better. Professional consulting services in business development, sales, analytics, web development, education consultancy, digital marketing, and import/export solutions.">
+    <meta name="keywords" content="business consulting, digital marketing, web development, import export, education consultancy, sales solutions, Bangalore, MSME, Manoj B">
+    <meta name="author" content="Manoj B">
+    <meta property="og:title" content="Atmanova Global - The sooner The Better">
+    <meta property="og:description" content="Transforming Business. Redefining Success.">
+    <title>Atmanova Global | The sooner The Better - Transforming Business</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #1a1a2e;
+            --secondary: #0f3460;
+            --accent-blue: #00d4ff;
+            --accent-cyan: #00f7ff;
+            --accent-neon: #00ff88;
+            --danger: #ff006e;
+            --background: #0a0e1a;
+            --surface: #12161f;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --text-muted: #6b7280;
+            --card-glass: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(0, 212, 255, 0.1);
+            --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.15);
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--background);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 212, 255, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 90% 80%, rgba(0, 247, 255, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.3s ease;
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            background: rgba(10, 14, 26, 0.95);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 30px rgba(0, 212, 255, 0.1);
+            padding: 1rem 5%;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-primary);
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%);
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(0, 247, 255, 0.1) 0%, transparent 50%);
+            animation: pulse 8s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 0.8; }
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            background: rgba(0, 212, 255, 0.2);
+            border-radius: 50%;
+            animation: float 20s infinite;
+            filter: blur(1px);
+        }
+
+        .particle:nth-child(1) { width: 100px; height: 100px; top: 10%; left: 10%; animation-delay: 0s; }
+        .particle:nth-child(2) { width: 60px; height: 60px; top: 70%; left: 80%; animation-delay: 3s; }
+        .particle:nth-child(3) { width: 120px; height: 120px; top: 40%; left: 70%; animation-delay: 6s; background: rgba(0, 247, 255, 0.15); }
+        .particle:nth-child(4) { width: 80px; height: 80px; top: 80%; left: 20%; animation-delay: 9s; }
+        .particle:nth-child(5) { width: 70px; height: 70px; top: 30%; left: 50%; animation-delay: 12s; background: rgba(0, 255, 136, 0.1); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.3; }
+            50% { transform: translateY(-100px) rotate(180deg); opacity: 0.6; }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: fadeInUp 1s ease 0.2s both;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .hero .tagline {
+            font-size: 1.8rem;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+
+        .hero .company-name {
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            margin-bottom: 2.5rem;
+            font-weight: 500;
+            animation: fadeInUp 1s ease 0.4s both;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+            animation: fadeInUp 1s ease 0.5s both;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(0, 212, 255, 0.6);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--text-primary);
+            border: 2px solid var(--accent-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--accent-blue);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+            cursor: pointer;
+        }
+
+        .scroll-indicator::before {
+            content: '↓';
+            font-size: 2rem;
+            color: var(--accent-cyan);
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
+            40% { transform: translateX(-50%) translateY(-10px); }
+            60% { transform: translateX(-50%) translateY(-5px); }
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 100px 5%;
+            position: relative;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s ease;
+        }
+
+        .section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            max-width: 1300px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--card-border);
+            border-radius: 24px;
+            padding: 0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            opacity: 0.15;
+            transition: all 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-glow);
+            border-color: var(--accent-blue);
+        }
+
+        .service-card:hover::before {
+            opacity: 0.25;
+            transform: scale(1.05);
+        }
+
+        .service-card.business::before {
+            background-image: url('https://pplx-res.cloudinary.com/image/upload/v1762449424/pplx_project_search_images/6252d71f486d97e55887853512eeb167acd3d2ef.png');
+        }
+
+        .service-card.analytics::before {
+            background-image: url('https://pplx-res.cloudinary.com/image/upload/v1757674010/pplx_project_search_images/f5c99c361542560b5b29904abcb1d6c3e494aa39.png');
+        }
+
+        .service-card.technology::before {
+            background-image: url('https://pplx-res.cloudinary.com/image/upload/v1762449424/pplx_project_search_images/508496652f07428ac8f385835c56ce59fa00f7d4.png');
+        }
+
+        .service-card.global::before {
+            background-image: url('https://pplx-res.cloudinary.com/image/upload/v1762449427/pplx_project_search_images/0ed43c64329b5af0418d05a967080e270a77168e.png');
+        }
+
+        /* Additional animations */
+        @keyframes glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(0, 212, 255, 0.2); }
+            50% { box-shadow: 0 0 40px rgba(0, 212, 255, 0.4); }
+        }
+
+        .service-card:hover .service-icon {
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        .service-header {
+            padding: 2.5rem 2rem 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+        }
+
+        .service-card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.8rem;
+            color: var(--text-primary);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .service-card .description {
+            color: var(--text-secondary);
+            line-height: 1.7;
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .dropdown-arrow {
+            font-size: 1.2rem;
+            color: var(--accent-cyan);
+            transition: transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .service-card.active .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+
+        .service-dropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            padding: 0 2rem;
+        }
+
+        .service-card.active .service-dropdown {
+            max-height: 500px;
+            padding: 0 2rem 2rem;
+        }
+
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            background: rgba(0, 212, 255, 0.05);
+            border-left: 3px solid var(--accent-blue);
+            border-radius: 8px;
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+        }
+
+        .service-list li:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-left-color: var(--accent-cyan);
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+
+        .service-list li::before {
+            content: '✓';
+            color: var(--accent-cyan);
+            font-weight: bold;
+            margin-right: 0.8rem;
+        }
+
+        /* About Section */
+        .about {
+            background: var(--surface);
+            position: relative;
+        }
+
+        .about::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 30% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: var(--shadow-glow);
+            position: relative;
+            border: 1px solid var(--card-border);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: brightness(0.9);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.05);
+            filter: brightness(1);
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .about-text h3 {
+            font-size: 1.3rem;
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .about-text p {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .vision-box {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-left: 4px solid var(--accent-neon);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-top: 2rem;
+        }
+
+        .vision-box p {
+            margin: 0;
+            font-style: italic;
+            color: var(--text-primary);
+        }
+
+        /* Values Section */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-cyan);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .value-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: inline-block;
+            filter: drop-shadow(0 0 8px rgba(0, 212, 255, 0.3));
+        }
+
+        .value-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-cyan);
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Process Section */
+        .process {
+            background: var(--background);
+            position: relative;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 70% 50%, rgba(0, 247, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-step {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-blue);
+            box-shadow: var(--shadow-glow);
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--primary);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+        }
+
+        .process-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-primary);
+        }
+
+        .process-step p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* Contact Section */
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .contact-form {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 3rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--card-border);
+            border-radius: 10px;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-blue);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .info-card {
+            background: var(--card-glass);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--accent-cyan);
+            transform: translateX(10px);
+        }
+
+        .info-card h3 {
+            color: var(--accent-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .info-card a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .info-card a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .info-card p {
+            color: var(--text-secondary);
+            margin: 0.5rem 0;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            padding: 4rem 5% 2rem;
+            border-top: 1px solid var(--card-border);
+        }
+
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-brand p {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .footer-links h4 {
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-cyan);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: var(--card-glass);
+            border: 1px solid var(--card-border);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--accent-blue);
+            color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-secondary);
+        }
+
+        .footer-bottom p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .about-content,
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 2rem;
+            }
+
+            .service-card::before {
+                height: 150px;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                height: 100vh;
+                width: 70%;
+                background: rgba(10, 22, 40, 0.98);
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: right 0.3s ease;
+                gap: 2rem;
+            }
+
+            .nav-links.active {
+                right: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+            }
+
+            .menu-toggle.active span:nth-child(1) {
+                transform: rotate(45deg) translate(8px, 8px);
+            }
+
+            .menu-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .menu-toggle.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(7px, -7px);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                letter-spacing: 1px;
+            }
+
+            .hero .tagline {
+                font-size: 1.4rem;
+            }
+
+            .hero .company-name {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .hero .subtitle {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .section-subtitle {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+            }
+
+            .quick-contact {
+                flex-direction: column;
+            }
+
+            .quick-btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .map-container {
+                height: 300px;
+            }
+        }
+
+        /* Form Success Message */
+        .success-message {
+            display: none;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--accent-neon);
+            color: var(--accent-neon);
+            padding: 1rem;
+            border-radius: 10px;
+            margin-top: 1rem;
+            text-align: center;
+        }
+
+        /* MSME Badge */
+        .msme-badge {
+            display: inline-block;
+            padding: 0.6rem 1.5rem;
+            background: var(--card-glass);
+            border: 1px solid var(--accent-neon);
+            border-radius: 50px;
+            color: var(--accent-neon);
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        /* Quick Contact Buttons */
+        .quick-contact {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .quick-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.8rem 1.5rem;
+            background: var(--card-glass);
+            border: 1px solid var(--card-border);
+            border-radius: 50px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .quick-btn:hover {
+            background: var(--accent-blue);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Map Container */
+        .map-container {
+            margin-top: 3rem;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid var(--card-border);
+            height: 400px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: grayscale(0.3) brightness(0.9);
+        }
+
+        /* Loader for smooth transitions */
+        .page-transition {
+            opacity: 0;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeInUp 0.5s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">ATMANOVA GLOBAL</div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="hero-content">
+            <h1>The sooner The Better</h1>
+            <div class="tagline">Transforming Business. Redefining Success.</div>
+            <div class="company-name">ATMANOVA GLOBAL</div>
+            <p class="subtitle">Where Innovation Meets Excellence - Comprehensive solutions in Business Development, Digital Transformation, Global Trade &amp; Education Consultancy</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+                <a href="#services" class="btn btn-secondary">Explore Services</a>
+            </div>
+        </div>
+        <div class="scroll-indicator" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})"></div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <h2 class="section-title">Our Comprehensive Services</h2>
+        <p class="section-subtitle">Explore our full range of professional services designed to drive your business forward</p>
+        <div class="services-grid">
+            <div class="service-card business">
+                <div class="service-header">
+                    <span class="service-icon">💼</span>
+                    <h3>Business &amp; Consulting <span class="dropdown-arrow">▼</span></h3>
+                    <p class="description">Strategic guidance for sustainable growth</p>
+                </div>
+                <div class="service-dropdown">
+                    <ul class="service-list">
+                        <li>Business Development Strategy</li>
+                        <li>Market Analysis &amp; Research</li>
+                        <li>Growth Strategy Consulting</li>
+                        <li>Strategic Partnership Development</li>
+                        <li>Business Model Innovation</li>
+                        <li>Startup Advisory</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card analytics">
+                <div class="service-header">
+                    <span class="service-icon">📊</span>
+                    <h3>Sales &amp; Analytics <span class="dropdown-arrow">▼</span></h3>
+                    <p class="description">Data-driven insights and revenue growth</p>
+                </div>
+                <div class="service-dropdown">
+                    <ul class="service-list">
+                        <li>Sales Process Optimization</li>
+                        <li>Lead Generation Strategies</li>
+                        <li>Sales Team Training</li>
+                        <li>Performance Analytics</li>
+                        <li>Revenue Optimization</li>
+                        <li>Customer Analytics</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card technology">
+                <div class="service-header">
+                    <span class="service-icon">💻</span>
+                    <h3>Technology &amp; Digital <span class="dropdown-arrow">▼</span></h3>
+                    <p class="description">Modern tech solutions and digital presence</p>
+                </div>
+                <div class="service-dropdown">
+                    <ul class="service-list">
+                        <li>Custom Web Development</li>
+                        <li>E-commerce Solutions</li>
+                        <li>Progressive Web Apps</li>
+                        <li>API Integration</li>
+                        <li>Digital Marketing &amp; SEO</li>
+                        <li>Social Media Management</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="service-card global">
+                <div class="service-header">
+                    <span class="service-icon">🌍</span>
+                    <h3>Global Trade &amp; Education <span class="dropdown-arrow">▼</span></h3>
+                    <p class="description">International business and learning solutions</p>
+                </div>
+                <div class="service-dropdown">
+                    <ul class="service-list">
+                        <li>International Import &amp; Export</li>
+                        <li>Trade Documentation</li>
+                        <li>Customs &amp; Logistics</li>
+                        <li>Education Consultancy</li>
+                        <li>University Selection</li>
+                        <li>Visa &amp; Career Guidance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <h2 class="section-title">About Atmanova Global</h2>
+        <p class="section-subtitle">Pioneering innovation and excellence in business transformation</p>
+        <div class="about-content">
+            <div class="about-image">
+                <img src="https://pplx-res.cloudinary.com/image/upload/v1762449424/pplx_project_search_images/6252d71f486d97e55887853512eeb167acd3d2ef.png" alt="Global business innovation and strategy">
+            </div>
+            <div class="about-text">
+                <h3>Manoj B - Founder &amp; CEO, Sole Proprietor</h3>
+                <p>At Atmanova Global, we believe in challenging the status quo and breaking free from conventional thinking. Our mission is to empower businesses and individuals to reach their full potential through innovative solutions and strategic guidance.</p>
+                <p>We don't just follow trends—we create them. With expertise spanning business development, digital transformation, education consultancy, and global trade, we provide comprehensive solutions that drive real results.</p>
+                <div class="vision-box">
+                    <p><strong>Our Vision:</strong> "Changing the whole system and exiting the trap of society"</p>
+                </div>
+                <p>Based in Electronic City, Bangalore, we serve clients worldwide, bringing a unique perspective that combines local expertise with global vision. Every project we undertake is an opportunity to revolutionize the way business is done.</p>
+                <div class="msme-badge">UDYAM MSME: UDYAM-KR-03-0612277</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="values" class="section">
+        <h2 class="section-title">Why Choose Atmanova Global</h2>
+        <p class="section-subtitle">Our commitment to excellence drives everything we do</p>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">💡</div>
+                <h3>Innovation</h3>
+                <p>Breakthrough solutions that redefine markets and challenge conventional thinking</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Trust</h3>
+                <p>Transparency and integrity in every partnership - building lasting relationships</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">⭐</div>
+                <h3>Excellence</h3>
+                <p>Premium quality in every deliverable - we pursue perfection relentlessly</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon">🌐</div>
+                <h3>Global Impact</h3>
+                <p>Worldwide reach with local expertise - think globally, act strategically</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="section process">
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-subtitle">A proven methodology that delivers results every time</p>
+        <div class="process-timeline">
+            <div class="process-step">
+                <div class="step-number">1</div>
+                <h3>Discovery</h3>
+                <p>In-depth consultation to understand your needs, challenges, and vision</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">2</div>
+                <h3>Strategy</h3>
+                <p>Custom roadmap tailored to your goals with clear milestones</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">3</div>
+                <h3>Execution</h3>
+                <p>Flawless implementation with precision and continuous optimization</p>
+            </div>
+            <div class="process-step">
+                <div class="step-number">4</div>
+                <h3>Growth</h3>
+                <p>Sustained success and continuous improvement through partnership</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <h2 class="section-title">Let's Transform Your Business</h2>
+        <p class="section-subtitle">Get in touch with us to discuss how we can help you achieve your goals</p>
+        <div class="contact-container">
+            <form class="contact-form" id="contactForm">
+                <div class="form-group">
+                    <label for="name">Full Name *</label>
+                    <input type="text" id="name" name="name" placeholder="Your name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX">
+                </div>
+                <div class="form-group">
+                    <label for="company">Company Name</label>
+                    <input type="text" id="company" name="company" placeholder="Your company">
+                </div>
+                <div class="form-group">
+                    <label for="service">Service Interest *</label>
+                    <select id="service" name="service" required>
+                        <option value="">Select a service category</option>
+                        <option value="business-consulting">Business &amp; Consulting</option>
+                        <option value="sales-analytics">Sales &amp; Analytics</option>
+                        <option value="technology-digital">Technology &amp; Digital</option>
+                        <option value="global-trade-education">Global Trade &amp; Education</option>
+                        <option value="business-development">Business Development Strategy</option>
+                        <option value="web-development">Custom Web Development</option>
+                        <option value="digital-marketing">Digital Marketing &amp; SEO</option>
+                        <option value="import-export">Import &amp; Export</option>
+                        <option value="education-consultancy">Education Consultancy</option>
+                        <option value="other">Other Services</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Requirements *</label>
+                    <textarea id="message" name="message" placeholder="Tell us about your project or requirements..." required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                <div class="success-message" id="successMessage">
+                    ✓ Thank you for your message! We'll get back to you within 24 hours.
+                </div>
+            </form>
+            <div class="contact-info">
+                <div class="info-card">
+                    <h3>📧 Email Us</h3>
+                    <p><a href="mailto:info@atmanovaglobal.com">info@atmanovaglobal.com</a></p>
+                    <p><a href="mailto:contact@atmanovaglobal.com">contact@atmanovaglobal.com</a></p>
+                    <p><a href="mailto:official@atmanovaglobal.com">official@atmanovaglobal.com</a></p>
+                </div>
+                <div class="info-card">
+                    <h3>📱 Call Us</h3>
+                    <p><a href="tel:+919833823837">+91 9833823837</a></p>
+                </div>
+                <div class="info-card">
+                    <h3>📍 Visit Us</h3>
+                    <p>7 Samruddhi Nilaya</p>
+                    <p>Bettadasanapura Main Road</p>
+                    <p>Electronic City Phase 1</p>
+                    <p>Opposite to Kidzee</p>
+                    <p>Bangalore 560100</p>
+                </div>
+                <div class="quick-contact">
+                    <a href="https://wa.me/919833823837" target="_blank" class="quick-btn">
+                        💬 WhatsApp
+                    </a>
+                    <a href="tel:+919833823837" class="quick-btn">
+                        📞 Call Now
+                    </a>
+                    <a href="mailto:info@atmanovaglobal.com" class="quick-btn">
+                        ✉️ Email
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="map-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3890.3057!2d77.6641!3d12.8451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDUwJzQyLjQiTiA3N8KwMzknNTIuOCJF!5e0!3m2!1sen!2sin!4v1234567890" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>ATMANOVA GLOBAL</h3>
+                <p>"The sooner The Better" - Transforming businesses worldwide through innovative solutions and strategic excellence.</p>
+                <p style="margin-top: 1rem; color: var(--accent-neon); font-size: 0.9rem;">✓ UDYAM MSME: UDYAM-KR-03-0612277</p>
+                <div class="social-links">
+                    <a href="https://linkedin.com/company/atmanovaglobal" target="_blank" aria-label="LinkedIn" rel="noopener">in</a>
+                    <a href="https://twitter.com/atmanovaglobal" target="_blank" aria-label="Twitter" rel="noopener">𝕏</a>
+                    <a href="https://instagram.com/atmanovaglobal" target="_blank" aria-label="Instagram" rel="noopener">📷</a>
+                    <a href="https://youtube.com/@atmanovaglobal" target="_blank" aria-label="YouTube" rel="noopener">▶</a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#values">Why Choose Us</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Our Services</h4>
+                <ul>
+                    <li><a href="#services">Business &amp; Consulting</a></li>
+                    <li><a href="#services">Sales &amp; Analytics</a></li>
+                    <li><a href="#services">Technology &amp; Digital</a></li>
+                    <li><a href="#services">Global Trade &amp; Education</a></li>
+                    <li><a href="#services">Digital Marketing</a></li>
+                    <li><a href="#services">Web Development</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h4>Contact Info</h4>
+                <ul>
+                    <li><a href="mailto:info@atmanovaglobal.com">info@atmanovaglobal.com</a></li>
+                    <li><a href="tel:+919833823837">+91 9833823837</a></li>
+                    <li style="color: var(--text-secondary); cursor: default;">Electronic City Phase 1</li>
+                    <li style="color: var(--text-secondary); cursor: default;">Bangalore 560100</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Atmanova Global. All rights reserved. | Privacy Policy | Terms of Service</p>
+            <p>Founded &amp; Led by Manoj B - Sole Proprietor &amp; CEO</p>
+        </div>
+    </footer>
+
+    <script>
+        // Page transition effect
+        document.body.classList.add('page-transition');
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Mobile menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // Service card dropdown functionality
+        const serviceCards = document.querySelectorAll('.service-card');
+        
+        serviceCards.forEach(card => {
+            const header = card.querySelector('.service-header');
+            
+            header.addEventListener('click', (e) => {
+                e.stopPropagation();
+                
+                // Close other cards
+                serviceCards.forEach(otherCard => {
+                    if (otherCard !== card) {
+                        otherCard.classList.remove('active');
+                    }
+                });
+                
+                // Toggle current card
+                card.classList.toggle('active');
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.section').forEach(section => {
+            observer.observe(section);
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Form validation
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value.trim();
+
+            if (!name || !email || !service || !message) {
+                alert('Please fill in all required fields marked with *');
+                return;
+            }
+
+            // Email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(email)) {
+                alert('Please enter a valid email address.');
+                return;
+            }
+
+            // Show success message
+            successMessage.classList.add('show');
+            
+            // Reset form
+            contactForm.reset();
+
+            // Scroll to success message
+            successMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+
+            // Hide success message after 7 seconds
+            setTimeout(() => {
+                successMessage.classList.remove('show');
+            }, 7000);
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
